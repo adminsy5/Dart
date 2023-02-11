@@ -216,9 +216,9 @@ TotalandAvaragefromList() {
   int? Dotnet = int.parse(stdin.readLineSync()!);
 
   var Subject = [Android, Java, Iot, Is, Dotnet];
-  // var elements = Subject.reduce((a, b) => a + b);
+  var elements = Subject.reduce((a, b) => a + b);
 
-  // print("\nList : $Subject");
-  // print("The total of list elements : $elements");
-  // print("The avarage of list is : ${elements / Subject.length}\n");
+  print("\nList : $Subject");
+  print("The total of list elements : $elements");
+  print("The avarage of list is : ${elements / Subject.length}\n");
 }
