@@ -8,6 +8,9 @@ void main() {
   print("4) Check the Type of varible ");
   print("5) User Input user Details ");
   print("6) Sum of Naturals Number ");
+  print("7) Simple Interest Using Function");
+  print("8) Odd Number between 1 to 100 also UserInput");
+  print("9) find Total and avarage from list ");
 
   print("\n");
   int? userInput = int.parse(stdin.readLineSync()!);
@@ -31,6 +34,15 @@ void main() {
       break;
     case 6:
       SumofNaturalNumberUsingForLoop();
+      break;
+    case 7:
+      FindSimpleIntereset();
+      break;
+    case 8:
+      OddNumberusingWhileLoop();
+      break;
+    case 9:
+      TotalandAvaragefromList();
       break;
   }
 }
@@ -158,4 +170,55 @@ SumofNaturalNumberUsingForLoop() {
     sum += i;
   }
   print("sum : $sum");
+}
+
+FindSimpleIntereset() {
+  print("\nEnter the amount :");
+  int? P = int.parse(stdin.readLineSync()!);
+
+  print("Enter the interest rate :");
+  int? R = int.parse(stdin.readLineSync()!);
+
+  print("Enter the number of years :");
+  int? N = int.parse(stdin.readLineSync()!);
+
+  print("\n Simple Interest : ${P * R * N / 100}\n");
+}
+
+OddNumberusingWhileLoop() {
+  print("\nEnter the number (example : 100) = ");
+  int? number = int.parse(stdin.readLineSync()!);
+
+  int n = 0;
+  print("\n");
+  while (n < number) {
+    n += 1;
+    if (n % 2 == 0) {
+      print("$n");
+    }
+  }
+}
+
+TotalandAvaragefromList() {
+  print("\nEnter the marks of Android : ");
+  int? Android = int.parse(stdin.readLineSync()!);
+
+  print("Enter the marks of Java : ");
+  int? Java = int.parse(stdin.readLineSync()!);
+
+  print("Enter the marks of Iot : ");
+  int? Iot = int.parse(stdin.readLineSync()!);
+
+  print("Enter the marks of Is : ");
+  int? Is = int.parse(stdin.readLineSync()!);
+
+  print("Enter the marks of .Net : ");
+  int? Dotnet = int.parse(stdin.readLineSync()!);
+
+  var Subject = [Android, Java, Iot, Is, Dotnet];
+  // var elements = Subject.reduce((a, b) => a + b);
+
+  // print("\nList : $Subject");
+  // print("The total of list elements : $elements");
+  // print("The avarage of list is : ${elements / Subject.length}\n");
 }
