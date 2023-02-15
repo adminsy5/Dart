@@ -1,3 +1,8 @@
+/*
+  ROLL NUMBER : 574
+  NAME : PIYUSH MAKWANA
+  YEAR/DIV : SYBCA5
+*/
 import 'dart:io';
 
 void main() {
@@ -216,9 +221,11 @@ TotalandAvaragefromList() {
   int? Dotnet = int.parse(stdin.readLineSync()!);
 
   var Subject = [Android, Java, Iot, Is, Dotnet];
-  var elements = Subject.reduce((a, b) => a + b);
+  var sum = 0;
+  Subject.forEach((element) => sum += element);
 
   print("\nList : $Subject");
-  print("The total of list elements : $elements");
-  print("The avarage of list is : ${elements / Subject.length}\n");
+  print("The total of list elements : $sum");
+  // print("The avarage of list is : ${element / Subject.length}\n");
+  print("The avarage of list is : ${sum / 5}");
 }
