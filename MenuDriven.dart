@@ -1,23 +1,19 @@
 import 'dart:io';
 
 void main() {
-  LstList();
-}
-
-LstList() {
   print("||=== Menu Driven v1.0 ===|| ");
-  print("2.Insert Item in List");
-  print("3.update the List");
-  print("4.Deleted from the list");
-  print("5.Display List");
-  print("6.Clear List");
+  print("1.Insert Item in List");
+  print("2.update the List");
+  print("3.Deleted from the list");
+  print("4.Display List");
+  print("5.Clear List");
   print("0.exit");
 
   print("Enter the number : ");
   int? uac = int.parse(stdin.readLineSync()!);
   while (true) {
     switch (uac) {
-      case 2:
+      case 1:
         uac2();
         break;
     }
@@ -39,5 +35,5 @@ uac2() {
     } while (input == null);
     list.add(input);
   }
-   print('UserInpyut List : ${list}');
+  print('UserInput List : ${list}');
 }
