@@ -640,7 +640,7 @@ void MapOperation() {
     print("<3> Update in Map");
     print("<4> Remove from Map");
     print("<5> Clear the map");
-    print("\n Press 0 for exit....");
+    print("\nPress 0 for exit....\n");
 
     print("Choose option ~ ");
     int? option = int.parse(stdin.readLineSync()!);
@@ -727,8 +727,71 @@ void MapOperation() {
         }
         break;
       case 4:
+        print("\n<1> Automatic Delete");
+        print("<2> Manually Delete");
+        print("\n Choose Option !");
+        int? option = int.parse(stdin.readLineSync()!);
+        switch (option) {
+          case 1:
+            print("\nBefore remove from Map : $suratPins");
+            suratPins.remove("Katargam");
+            suratPins.remove("Varachha Road");
+            suratPins.remove("Surat");
+            suratPins.remove("Kamrej");
+            print("\n After Deleted ! ");
+            suratPins.forEach((key, value) {
+              print("$key : $value");
+            });
+            break;
+          case 2:
+            print("\n<1> remove from map using Key");
+            print("<2> remove ALL");
+            print("Choose Option !");
+            int? option = int.parse(stdin.readLineSync()!);
+            switch (option) {
+              case 1:
+                print("\nHow many items you want to remove ?");
+                int? value = int.parse(stdin.readLineSync()!);
+                for (int i = 0; i < value; i++) {
+                  print("\nenter your key which you want to deleted (String)!");
+                  String? key = stdin.readLineSync();
+                  suratPins.remove(key);
+                }
+                print("\nAfter remove form the Map : ${suratPins}");
+                break;
+              case 2:
+                suratPins.removeWhere((key, value) => true);
+                print("\n after remove all items from Map : $suratPins");
+                break;
+            }
+        }
         break;
+      case 5:
+        print("want to clear map ? (Y/N)");
+        String? ask = stdin.readLineSync();
+
+        if (ask == "Y" ||
+            ask == "y" ||
+            ask == "Yes" ||
+            ask == "yes" ||
+            ask == "YES") {
+          suratPins.clear();
+          print("\n map is clear ! $suratPins");
+        } else if (ask == "N" ||
+            ask == "n" ||
+            ask == "No" ||
+            ask == "no" ||
+            ask == "NO") {
+          print("\nMap isn't clear !");
+        } else {
+          print("Opps ! enter valid option >> ");
+        }
+        break;
+      case 0:
+        print("\n DEVELOPER : PIYUSH MAKWANA :)\n");
+        exit(0);
     }
+    break;
   }
 }
 
