@@ -1,15 +1,22 @@
 import 'dart:io';
 
 void main() {
-  uac1();
+  userinput();
 }
 
-uac1() {
-  print("\nEnter your First Name : ");
+userinput() {
+  print("\nEnter your Full Name : ");
   String? fname = stdin.readLineSync();
 
-  print("\nEnter your Last Name : ");
-  String? lname = stdin.readLineSync();
+  print("\nEnter your Email Address : ");
+  String? email = stdin.readLineSync();
 
-  print("\nName : ${fname} ${lname}");
+  print("\nEnter your Mobile Number : ");
+  int? mno = int.parse(stdin.readLineSync()!);
+
+  print("");
+
+  print("Full Name : ${fname}");
+  print("Email : ${email}");
+  print("Moblile No. : ${mno}");
 }
